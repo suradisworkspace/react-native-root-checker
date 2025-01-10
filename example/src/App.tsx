@@ -1,12 +1,21 @@
+import { useEffect, useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-root-checker';
-
-const result = multiply(3, 7);
+import {
+  checkBootloaderUnlocked,
+  checkRootJail,
+} from 'react-native-root-checker';
 
 export default function App() {
+  const [bootLoaderStatus, setBootLoaderStatus] = useState(false);
+  const [rootJailStatus, setRootJailStatus] = useState(false);
+  useEffect(() => {
+    setBootLoaderStatus(checkBootloaderUnlocked());
+    setRootJailStatus(checkRootJail());
+  }, []);
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>{`BootLoader Status: ${bootLoaderStatus}`}</Text>
+      <Text>{`RootJail Status: ${rootJailStatus}`}</Text>
     </View>
   );
 }

@@ -1,7 +1,7 @@
 {
   "name": "react-native-root-checker",
   "version": "0.1.0",
-  "description": "check root and boot loader",
+  "description": "check root and boot loader for react-native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",

@@ -1,5 +1,9 @@
 import RootChecker from './NativeRootChecker';
 
-export function multiply(a: number, b: number): number {
-  return RootChecker.multiply(a, b);
+export function checkRootJail(): boolean {
+  return RootChecker.checkRootJail();
+}
+
+export function checkBootloaderUnlocked(): boolean {
+  return RootChecker.checkBootloaderUnlocked();
 }
